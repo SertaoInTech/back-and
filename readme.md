@@ -1,33 +1,46 @@
 >Instalando o Yarn linux:
 
-#Remover
-sudo apt remove cmdtest
-sudo apt remove yarn
+    #REMOVER
+        $ sudo apt remove cmdtest
+        $ sudo apt remove yarn
 
-#instalaçao do yarn e remoção
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update
-sudo apt-get install yarn -y
-yarn install
+    #INSTALAR
+        $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.$ list.d/yarn.list
+        $ sudo apt-get update
+        $ sudo apt-get install yarn -y
+        $ yarn install
+==========================================================================================
+>Comando do yarn:
 
+    #INSTALAR PACOTE
+        $ yarn add {nome do pacote}
 
->Para criar a tabela com sequelise:
+    #INICIAR PROJETO
+        $ yarn init -y
 
-$ yarn sequelize db:create
+    #INSTALAR NODE_MODULES
+        $ yarn add yarn
 
-> Crinado uma migration apoós feito adição:
+==========================================================================================
 
-$ yarn sequelize migration:create --name=create-users
+>Manipulando DB migration sequelise
 
-> Rodar as migrations:
+    #PARA CRIAR DATABASE:
+        $ yarn sequelize db:create
 
-$ yarn sequelize db:migrate
+    #PARA CRIAR UMA ARQUIVO DE MIGRATION:
+        $ yarn sequelize migration:create --name=c{nome que deseja colocar}
 
-> Para matar o processo pela nome no linux
+    #COLOCAR AS MIGRATION EM PRODUÇÃO:
+        $ yarn sequelize db:migrate
 
-$ sudo killall -9 node
+==========================================================================================
+> Alguns comandos de debbug no linux
+    
+    #MATAR O SERVIÇO DA PORTAS
+        $ sudo killall -9 node
 
-> Para verificar se a porta está em uso
+>   #SABER QUAL SERVIÇO ESTA USANDO UMA PORTA
 
-$ sudo lsof -i :3333
+        $ sudo lsof -i :{numero da porta a consultar}
