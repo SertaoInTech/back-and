@@ -58,7 +58,7 @@ module.exports = {
 
         return res.status(200).send({
             status: 1,
-            message: "Usuario delete with success"
+            message: "Sala delete with success"
         });
 
     }
