@@ -3,6 +3,7 @@ const dbConfig = require('../config/database');
 
 
 const Sala = require('../models/Sala')
+const User = require('../models/User')
 const connection = new Sequelize(dbConfig);
 
 /*try{
@@ -13,5 +14,6 @@ const connection = new Sequelize(dbConfig);
 }*/
 
 Sala.init(connection);
+User.init(connection);
 
 module.exports = connection;
