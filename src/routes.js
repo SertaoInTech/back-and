@@ -1,6 +1,10 @@
 const express = require('express');
+const multer = require('multer');
 const SalaController = require('./controllers/SalaController');
 const UserController = require('./controllers/UserController');
+const excelController = require('./controllers/ExcelController');
+
+const configMulterexel = require('./config/multerExel');
 
 const authMiddleware = require('./middlewares/auth');
 
@@ -23,14 +27,9 @@ routes.post('/salas', SalaController.store);
 routes.put('/salas/:sala_id', SalaController.update);
 routes.delete('/salas/:sala_id', SalaController.delete);
 
+/*UPLOAD DO ARQUIVO XLSX */
+routes.post('/upload',multer(configMulterexel).array('file'),excelController.upload);
 
-routes.get('/', (req, res) => {
 
-    return res.json({
-        'Service': 'Okay',
-        'data': Date.now()
-    })
-
-});
 
 module.exports = routes;

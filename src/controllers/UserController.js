@@ -17,7 +17,6 @@ module.exports = {
         const { password, email, islogged } = req.body;
 
         const user = await User.findOne({ where: { email } });
-        console.log('>>>>>>>>>>>>>', user)
         if (!user) {
             return res.status(400).send({
                 status: 0,

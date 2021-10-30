@@ -5,4 +5,5 @@ module.exports = {
         timestamps: true,
         underscored: true,
     },
+    logging: false,
 };
