@@ -19,7 +19,7 @@ routes.delete('/users/:user_id',authMiddleware, UserController.delete);
 routes.post('/users/login', UserController.login);
 
 //TODAS AS ROTAS ABAIXO IRA PRECISAR DE TOKEN
-routes.use(authMiddleware);
+//routes.use(authMiddleware);
 
 /*ROTAS DA SALA*/
 routes.get('/salas', SalaController.index);

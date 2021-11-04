@@ -9,7 +9,7 @@ module.exports = {
             cb(null, path.resolve(__dirname,'..','..','tmp','uploads'));
         },
         filename: (res,file,cb) => {
-            crypto.randomBytes(1,(err,hash) => {
+            crypto.randomBytes(2,(err,hash) => {
                 if(err) cb(err);
                 const fileName = `${hash.toString('hex')}-${file.originalname}`;
                 cb(null, fileName);
@@ -22,7 +22,7 @@ module.exports = {
     },
     fileFilter: (res,file,cb) =>{
         const allwedMimes = [
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',,
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             'application/vnd.ms-excel',
             
         ];
