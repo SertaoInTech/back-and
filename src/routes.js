@@ -5,6 +5,7 @@ const UserController = require('./controllers/UserController');
 const excelController = require('./controllers/ExcelController');
 const matterController = require('./controllers/MatterController')
 const teachersController = require('./controllers/TeachersController')
+const contactsController = require('./controllers/ContactsController')
 
 const configMulterexel = require('./config/multerExel');
 
@@ -41,6 +42,13 @@ routes.get('/teachers', teachersController.index);
 routes.post('/teachers', teachersController.store);
 routes.put('/teachers/:teacher_id', teachersController.update);
 routes.delete('/teachers/:teacher_id', teachersController.delete);
+
+
+/*ROTAS DA CONTATOS*/
+routes.get('/contacts', contactsController.index);
+routes.post('/contacts', contactsController.store);
+routes.put('/contacts/:contacts_id', contactsController.update);
+routes.delete('/contacts/:contacts_id', contactsController.delete);
 
 /*UPLOAD DO ARQUIVO XLSX */
 routes.post('/upload',multer(configMulterexel).array('file'),excelController.upload);

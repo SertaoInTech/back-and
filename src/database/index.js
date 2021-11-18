@@ -6,6 +6,7 @@ const Sala = require('../models/Space')
 const User = require('../models/User')
 const Matter = require('../models/Matter')
 const Teachers = require('../models/Teachers')
+const Contacts = require('../models/Contacts')
 
 
 
@@ -22,5 +23,6 @@ Sala.init(connection);
 User.init(connection);
 Matter.init(connection);
 Teachers.init(connection);
+Contacts.init(connection);
 
 module.exports = connection;

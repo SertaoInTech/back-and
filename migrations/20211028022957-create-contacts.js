@@ -9,7 +9,7 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      professor_id: {
+      teachers_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'teachers', key: 'id' },
@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      telefone: {
+      telephone: {
         type: Sequelize.STRING,
         allowNull: true,
       },
