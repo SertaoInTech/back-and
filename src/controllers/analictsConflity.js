@@ -26,12 +26,11 @@ async function analicts(data){
     }
 
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO MATUTINO
-    for(const b of dataMatutino){
-
+    for(var b of dataMatutino){
         data = b.data;
         professor = b.professor;
-        const obj = b;
-        for(const c of dataMatutino){
+        var obj = b;
+        for(var c of dataMatutino){
             if(c.data === data && !c.professor === professor){
                 conflictM.push(c);
                 conflictM.push(obj);
@@ -41,11 +40,11 @@ async function analicts(data){
     }
 
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO VESPERTINO
-    for(const b of dataVespertino){
+    for(var b of dataVespertino){
         data = b.data;
         professor = b.professor;
-        const obj = b;
-        for(const c of dataVespertino){
+        var obj = b;
+        for(var c of dataVespertino){
             if(c.data === data && !c.professor === professor){
                 conflictV.push(c);
                 conflictV.push(obj);
@@ -55,11 +54,11 @@ async function analicts(data){
     }
     
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO NOTURNO
-    for(const b of dataNoturno){
+    for(var b of dataNoturno){
         data = b.data;
         professor = b.professor;
-        const obj = b;
-        for(const c of dataNoturno){
+        var obj = b;
+        for(var c of dataNoturno){
             if(c.data === data && !c.professor === professor){
                 conflictN.push(c);
                 conflictN.push(obj);
