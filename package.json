@@ -25,7 +25,7 @@
     "yarn": "^1.22.17"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.3.0"
   },
   "description": ">Instalando o Yarn linux:",
   "repository": {
