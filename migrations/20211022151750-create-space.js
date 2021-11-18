@@ -2,27 +2,33 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('salas', {
+    return queryInterface.createTable('spaces', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      number_sala: {
-        type:Sequelize.INTEGER,
+      space_name: {
+        type:Sequelize.STRING,
         aloowNull: false,
         
       },
-      andar: {
+      floor: {
         type:Sequelize.STRING,
-        allowNull: false,
+        allowNull: false,      
       },
 
       number_capacity: {
         type:Sequelize.INTEGER,
         allowNull: false,
       },
+
+      compart_simult: {
+        type:Sequelize.INTEGER,
+        allowNull: false,
+      },
+
 
       created_at: {
         type: Sequelize.DATE,
@@ -38,7 +44,7 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
 
-    await queryInterface.dropTable('salas');
+    await queryInterface.dropTable('spaces');
 
   }
 };

@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/database');
 
 
-const Sala = require('../models/Sala')
+const Sala = require('../models/Space')
 const User = require('../models/User')
 const connection = new Sequelize(dbConfig);
 

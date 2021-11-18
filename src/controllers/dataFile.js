@@ -1,4 +1,8 @@
 const excelFile = require("read-excel-file/node");
+const Space = require('../models/Space');
+const analicts = require('./analictsConflity');
+
+
 
 async function processFile(nameFiles) {
     let dados = [];
@@ -7,25 +11,35 @@ async function processFile(nameFiles) {
 
         //console.log('nome arquivo', nameFiles[i])
         await excelFile(nameFiles[i]).then((rows) => {
-            //console.log('rows', nameFiles[i])
-
+    
+            rows.shift();
             rows.shift();
 
+            //console.log('rows', nameFiles[i])
+
             for (const row of rows) {
-                //console.log('linha',row);
+                //console.log('linha>',excelFile.parseExcelDate(row[4]));
                 let values = {
-                    curso: row[0],
-                    professor: row[1],
-                    sala: row[2],
-                    data: row[3],
-                    turno: row[4]
+                    materia: row[0],
+                    andar: row[1],
+                    capacidade: row[2],
+                    date: excelFile.parseExcelDate(row[4]),
+                    turno: row[5],
+                    harario: row[6],
+                    professor: row[7],
+
                 }
+
+                //Space.create({ space_name:row[0], floor:row[1], number_capacity:row[2], compart_simult:row[3] });
 
                 dados.push(values);
             }
 
         });
     }
+
+
+    analicts.analicts(dados);
     return {
         qtdLine: dados.length,
         line: dados

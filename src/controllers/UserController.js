@@ -83,7 +83,7 @@ module.exports = {
         const token = generateToken({ id: user.id });
 
         return res.status(200).send({
-            status: 1,
+            erro: false,
             message: 'user created success',
             user, token
         })
@@ -100,7 +100,7 @@ module.exports = {
 
         if (!userExist) {
             return res.status(404).send({
-                status: 0,
+                erro: true,
                 message: 'user not found'
             });
         }
@@ -116,7 +116,7 @@ module.exports = {
         const user = await User.findOne({ where: { id: userExist.id } });
 
         return res.status(200).send({
-            status: 1,
+            erro: false,
             message: "Usuario update with success",
             user
 

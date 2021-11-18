@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const SalaController = require('./controllers/SalaController');
+const SalaController = require('./controllers/SpaceController');
 const UserController = require('./controllers/UserController');
 const excelController = require('./controllers/ExcelController');
 
