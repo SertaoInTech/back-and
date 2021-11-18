@@ -2,12 +2,12 @@
 async function analicts(data){
     let conflito = 0;
     let okay = 0;
-    dataMatutino = []
-    dataVespertino = []
-    dataNoturno = []
-    conflictM = []
-    conflictV = []
-    conflictn = []
+    let dataMatutino = []
+    let dataVespertino = []
+    let dataNoturno = []
+    let conflictM = []
+    let conflictV = []
+    let conflictN = []
 
     for (const a of data) {
         if (a.turno == "manhã") {
@@ -26,50 +26,63 @@ async function analicts(data){
     }
 
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO MATUTINO
-    for(var b of dataMatutino){
-        data = b.data;
-        professor = b.professor;
+    console.log("****************************************CCONFLITOS MATUTINO*********************************************");
+    var contConflictM = 0;
+    for(let b of dataMatutino){
+        var date = b.date;
+        var materia = b.materia;
         var obj = b;
-        for(var c of dataMatutino){
-            if(c.data === data && !c.professor === professor){
+        for(let c of dataMatutino){
+            if(c.date === date && c.materia === materia){
                 conflictM.push(c);
                 conflictM.push(obj);
+                contConflictM ++;
                 break;
             }
         }
     }
-
+    console.log("Total conflitos " + contConflictM);
+    console.log(conflictM);
+    console.log("*************************************************FIM*****************************************************");
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO VESPERTINO
-    for(var b of dataVespertino){
-        data = b.data;
-        professor = b.professor;
+    console.log("******************************************CONFLITOS VESPERTINOS******************************************");
+    var contConflictV = 0;
+    for(let b of dataVespertino){
+        var date = b.date;
+        var materia = b.materia;
         var obj = b;
-        for(var c of dataVespertino){
-            if(c.data === data && !c.professor === professor){
+        for(let c of dataVespertino){
+            if(c.data === date && c.materia === materia){
                 conflictV.push(c);
                 conflictV.push(obj);
+                contConflictV ++;
                 break;
             }
         }
     }
-    
+    console.log("Total conflitos " + contConflictV);
+    console.log(conflictV);
+    console.log("*************************************************FIM*****************************************************");
     //FAZ UMA RODADA DE COMPARAÇÃO DOS CONFLITOS NO HORÁRIO NOTURNO
-    for(var b of dataNoturno){
-        data = b.data;
-        professor = b.professor;
+    var contConflictN = 0;
+    console.log("***************************************CONFLITOS NOTURNO*************************************************");
+    for(let b of dataNoturno){
+        var date = b.date;
+        var materia = b.materia;
         var obj = b;
-        for(var c of dataNoturno){
-            if(c.data === data && !c.professor === professor){
+        for(let c of dataNoturno){
+            if(c.date === date && c.materia === materia ){
                 conflictN.push(c);
                 conflictN.push(obj);
+                contConflictN ++;
                 break;
             }
         }
     }
-
-    console.log(conflictM);
-    console.log(conflictV);
+    console.log("Total conflitos " + contConflictN);
     console.log(conflictN);
+    console.log("***************************************************FIM***************************************************");
+
 }
 
 module.exports = {analicts}
