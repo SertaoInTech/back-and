@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('materia_UCs', {
+    return queryInterface.createTable('contacts', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -12,11 +12,15 @@ module.exports = {
       professor_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'professores', key: 'id' },
+        references: { model: 'teachers', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      name: {
+      email: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      telefone: {
         type: Sequelize.STRING,
         allowNull: true,
       },
@@ -30,9 +34,9 @@ module.exports = {
       }
     });
   },
-
+  
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('materia_UCs');
+    return queryInterface.dropTable('contacts');
   }
 };

@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Professor extends Model {
+class Teachers extends Model {
     static init(sequelize){
         super.init({
             nome: DataTypes.STRING,
@@ -9,9 +9,9 @@ class Professor extends Model {
         }, {sequelize})
     }
     static associate(models) {
-        this.hasMany(models.Meteria_UC, { foreignKey: 'id', as: 'meteria_UC' });
-        this.hasMany(models.Contato, { foreignKey: 'id', as: 'contato' });
+        this.hasMany(models.Meteria_UC, { foreignKey: 'id', as: 'matter_UCs' });
+        this.hasMany(models.Contato, { foreignKey: 'id', as: 'contacts' });
         
     }
 }
-module.exports = Professor  
+module.exports = Teachers  

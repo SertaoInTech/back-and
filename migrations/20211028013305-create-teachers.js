@@ -2,27 +2,24 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('contatos', {
+    return queryInterface.createTable('teachers', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      professor_id: {
-        type: Sequelize.INTEGER,
+      nome: {
+        type: Sequelize.STRING,
         allowNull: false,
-        references: { model: 'professores', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
       },
-      email: {
+      endereco: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
-      telefone: {
+      instituicao: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -34,9 +31,9 @@ module.exports = {
       }
     });
   },
-  
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('contatos');
+    return queryInterface.dropTable('teachers');
+
   }
 };
