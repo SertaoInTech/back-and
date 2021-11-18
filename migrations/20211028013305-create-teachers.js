@@ -9,15 +9,15 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      nome: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      endereco: {
+      address: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      instituicao: {
+      institution: {
         type: Sequelize.STRING,
         allowNull: false,
       },

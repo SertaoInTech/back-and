@@ -9,7 +9,7 @@ class Contacts extends Model {
         }, {sequelize})
     }
     static associate(models) {
-        this.belongsTo(models.Professor, { foreignKey: 'id', as: 'matter_UCs' });
+        this.belongsTo(models.Teachers, { foreignKey: 'id', as: 'matters' });
     }
 }
 module.exports = Contacts

@@ -5,7 +5,9 @@ module.exports = {
         const space = await Space.findAll();
 
         if (space == "" || space == null) {
-            return res.status(200).send({ 'message': 'space not found' });
+            return res.status(200).send({ 
+                erro: false,
+                message: 'space not found' });
         }
 
         return res.status(200).send({ space });
