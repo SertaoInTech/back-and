@@ -5,23 +5,31 @@ async function analicts(data){
     dataMatutino = []
     dataVespertino = []
     dataNoturno = []
+    conflictM = []
+    conflictV = []
+    conflictn = []
 
-    for(const a of data){
-        if(a.turno == "manhã"){
+    for (const a of data) {
+        if (a.turno == "manhã") {
+
             dataMatutino.push(a);
-        }else if(a.turno == "vespertino"){
+
+        } else if (a.turno == "vespertino") {
+
             dataVespertino.push(a);
-        }else if (a.turno == "noturno"){
+
+        } else if (a.turno == "noturno") {
+
             dataNoturno.push(a);
+
         }
-    
     }
 
-    console.log(dataMatutino);
-    console.log(dataNoturno);
-    console.log(dataVespertino);
+   
 
-
+    console.log(conflictM);
+    console.log(conflictV);
+    console.log(conflictN);
 }
 
 module.exports = {analicts}
