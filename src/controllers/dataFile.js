@@ -27,7 +27,6 @@ async function processFile(nameFiles) {
                     turno: row[5],
                     harario: row[6],
                     professor: row[7],
-
                 }
 
                 //Space.create({ space_name:row[0], floor:row[1], number_capacity:row[2], compart_simult:row[3] });
@@ -39,13 +38,14 @@ async function processFile(nameFiles) {
     }
 
 
-    analicts.analicts(dados);
+    var variavel = analicts.analicts(dados);
+    console.log(variavel); 
     return {
         qtdLine: dados.length,
         line: dados
     }
-
+    
 }
-
+ 
 
 module.exports = { processFile }

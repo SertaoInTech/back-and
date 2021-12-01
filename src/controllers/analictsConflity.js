@@ -9,6 +9,9 @@ async function analicts(data){
     let conflictV = []
     let conflictN = []
 
+    //criar a função para quebrar a string de horario
+    //função para calcular as horas e comparar
+
     for (const a of data) {
         if (a.turno == "manhã") {
 
@@ -82,7 +85,6 @@ async function analicts(data){
     console.log("Total conflitos " + contConflictN);
     console.log(conflictN);
     console.log("***************************************************FIM***************************************************");
-
+    return dataNoturno;
 }
-
 module.exports = {analicts}
